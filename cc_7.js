@@ -22,11 +22,11 @@ console.log(calculateHourlyWage(75000, 35)); // Expected output: "Hourly Wage: $
 
 const calculateLoyaltyDiscount = (amount, years) => {
     let discount = years >= 5 ? 0.15 : years >= 3 ? 0.10 : 0.05; // calculating discount based on years
-    return (amount - (amount * discount)).toFixed(2); // return discounted price within two decimal places
+    return `Discounted Price: $${(amount - (amount * discount)).toFixed(2)}`; // return discounted price within two decimal places
 };
 
-console.log("Loyalty Discount 1: $", calculateLoyaltyDiscount(100, 6)); // Expected output: "Discounted Price: $85.00"
-console.log("Loyalty Discount 2: $", calculateLoyaltyDiscount(200, 2)); // Expected output: "Discounted Price: $190.00"
+console.log(calculateLoyaltyDiscount(100, 6)); // Expected output: "Discounted Price: $85.00"
+console.log(calculateLoyaltyDiscount(200, 2)); // Expected output: "Discounted Price: $190.00"
 
 // Task 4 Parameters and Arguments
 
