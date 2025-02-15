@@ -28,3 +28,18 @@ const calculateLoyaltyDiscount = (amount, years) => {
 console.log("Loyalty Discount 1: $", calculateLoyaltyDiscount(100, 6)); // Expected output: "Discounted Price: $85.00"
 console.log("Loyalty Discount 2: $", calculateLoyaltyDiscount(200, 2)); // Expected output: "Discounted Price: $190.00"
 
+// Task 4 Parameters and Arguments
+
+function calculateShippingCost(weight, location, expedited = false) {
+    let baseCost = location === "Canada" ? 10 : location === "USA" ? 5 : 0; // determine base cost based on location
+    let perLbCost = location === "Canada" ? 0.7 : location === "USA" ? 0.5 : 0; // deterimine per Lb cost based on location
+
+    let shippingCost = baseCost + (perLbCost * weight); // calculate the shipping cost by adding base cost to per Lb cost times weight
+
+    shippingCost += expedited ? 10 : 0; // If expidited $10 added if not expidited $ 0 added
+    
+    return `Shipping Cost: $${shippingCost.toFixed(2)}`; // return formatted shipping cost within two decimal places
+};
+
+console.log(calculateShippingCost(10, "USA", true)); // Expected output: "Shipping Cost: $20.00"
+console.log(calculateShippingCost(5, "Canada", false)); // Expected output: "Shipping Cost: $13.50"
